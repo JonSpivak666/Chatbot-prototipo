@@ -58,7 +58,7 @@ if prompt:
             lista = "\n".join(f"- {row['Nombre']} ({row['Disponibilidad']})" for _, row in productos.iterrows())
             respuesta = f"Estos son los productos y su disponibilidad:\n{lista}\nPuedes escribir el nombre de uno para continuar."
 
-        elif seleccionados:
+        if seleccionados:
             disponibles = productos[productos["Nombre"].isin(seleccionados) & (productos["Disponibilidad"] == "Sí")]
             no_disponibles = productos[productos["Nombre"].isin(seleccionados) & (productos["Disponibilidad"] == "No")]
 
@@ -69,6 +69,7 @@ if prompt:
                     "¿Deseas solicitar una cotización formal?"
                 )
                 st.session_state.fase = "confirmar_cotizacion"
+
             elif not no_disponibles.empty:
                 st.session_state.no_disponibles = no_disponibles["Nombre"].tolist()
                 respuesta = (
@@ -76,14 +77,12 @@ if prompt:
                     "¿Podrías dejarme tu nombre completo para notificarte cuando vuelva a estar disponible?"
                 )
                 st.session_state.fase = "espera_nombre"
-            else:
-                respuesta = "No reconocí ese producto. Intenta con 'Software A' hasta 'Software L'."
 
-        else:
-            respuesta = (
-                "No reconocí ningún producto. Intenta con nombres como 'Software A' hasta 'Software L', "
-                "o pregunta por disponibilidad."
-            )
+            elif not disponibilidad_detectada:
+                respuesta = (
+                    "No reconocí ese producto. Intenta con 'Software A' hasta 'Software L', "
+                    "o pregunta por disponibilidad."
+                )
 
     elif st.session_state.fase == "confirmar_cotizacion":
         if "sí" in prompt.lower() or "si" in prompt.lower():
@@ -160,5 +159,6 @@ if prompt:
     st.session_state.chat_history.append({"role": "assistant", "content": respuesta})
     with st.chat_message("assistant"):
         st.markdown(respuesta)
+
 
 
