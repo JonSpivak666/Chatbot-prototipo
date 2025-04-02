@@ -1,13 +1,15 @@
-Nombre,Descripción,Precio (MXN)
-Software A,Licencia profesional para software a con características avanzadas de productividad.,199.00
-Software B,Licencia profesional para software b con características avanzadas de productividad.,209.00
-Software C,Licencia profesional para software c con características avanzadas de productividad.,219.00
-Software D,Licencia profesional para software d con características avanzadas de productividad.,229.00
-Software E,Licencia profesional para software e con características avanzadas de productividad.,239.00
-Software F,Licencia profesional para software f con características avanzadas de productividad.,249.00
-Software G,Licencia profesional para software g con características avanzadas de productividad.,259.00
-Software H,Licencia profesional para software h con características avanzadas de productividad.,269.00
-Software I,Licencia profesional para software i con características avanzadas de productividad.,279.00
-Software J,Licencia profesional para software j con características avanzadas de productividad.,289.00
-Software K,Licencia profesional para software k con características avanzadas de productividad.,299.00
-Software L,Licencia profesional para software l con características avanzadas de productividad.,309.00
+Nombre,Disponibilidad
+Software A,Sí
+Software B,Sí
+Software C,Sí
+Software D,Sí
+Software E,NO
+Software F,Sí
+Software G,NO
+Software H,Sí
+Software I,NO
+Software J,Sí
+Software K,Sí
+Software L,Sí
+
+
