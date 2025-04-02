@@ -1,0 +1,12 @@
+# Ignorar el archivo de variables de entorno
+.env
+
+# Ignorar archivos temporales de Python
+__pycache__/
+*.py[cod]
+
+
+.ipynb_checkpoints/
+
+# Ignorar archivos de Streamlit generados al ejecutar
+.streamlit/
